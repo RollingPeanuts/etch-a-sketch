@@ -1,0 +1,16 @@
+:root {
+	--gridSideLength: 900px; /* Adjust to change size of grid */
+	--gridSideSquares; /* Number of squares per side of the grid */
+	--squareSideLength; 
+}
+
+#container {
+	display: grid;
+	grid-template-rows: repeat(var(--gridSideSquares), var(--squareSideLength));
+	grid-template-columns: repeat(var(--gridSideSquares), var(--squareSideLength));
+}
+
+.square {
+	border: 2px dotted black;
+}
+
