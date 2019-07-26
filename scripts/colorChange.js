@@ -17,8 +17,17 @@ function resetAllSquares()
 	gridSquaresList.forEach(gridSquare => gridSquare.removeAttribute("style"));
 }
 
+function updateColor(e)
+{
+	let penColor = e.target.value;
+	addGridSquareEventListeners(penColor);
+}
+
 let gridSquaresList;
 addGridSquareEventListeners();
 
 let resetButton = document.querySelector("#reset-button");
 resetButton.addEventListener("click", resetAllSquares);
+
+let colorSelector = document.querySelector("#color-selector");
+colorSelector.addEventListener("change", updateColor);
