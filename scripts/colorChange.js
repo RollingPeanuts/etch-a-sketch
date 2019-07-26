@@ -1,5 +1,4 @@
-function changeColor(e, penColor)
-{
+function changeColor(e, penColor) {
 	e.target.style.backgroundColor = penColor;	
 }
 
@@ -12,16 +11,28 @@ function addGridSquareEventListeners(penColor = "black") {
 	);
 }
 
-function resetAllSquares()
-{
+function resetAllSquares() {
 	gridSquaresList.forEach(gridSquare => gridSquare.removeAttribute("style"));
 }
 
-function updateColor(e)
-{
+function updateColor(e) {
+	gridSquaresList.forEach(gridSquare => gridSquare.removeEventListener("mouseleave", randomizePenColor));
 	let penColor = e.target.value;
 	addGridSquareEventListeners(penColor);
 }
+
+function randomizePenColor() {
+	let color = "rgb(" + Math.floor(Math.random() * 256) + "," 
+		+ Math.floor(Math.random() * 256) + "," 
+		+ Math.floor(Math.random() * 256) + ")";
+	addGridSquareEventListeners(color);
+}
+
+
+function toggleOnRandomColors() {
+	gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", randomizePenColor));
+}
+
 
 let gridSquaresList;
 addGridSquareEventListeners();
@@ -31,3 +42,6 @@ resetButton.addEventListener("click", resetAllSquares);
 
 let colorSelector = document.querySelector("#color-selector");
 colorSelector.addEventListener("change", updateColor);
+
+let randomColorsButton = document.querySelector("#random-colors-option");
+randomColorsButton.addEventListener("click", toggleOnRandomColors);
