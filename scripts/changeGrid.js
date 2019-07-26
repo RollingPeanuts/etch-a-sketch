@@ -5,8 +5,11 @@ function resetGrid() {
 }
 
 function changeGridSize() {
-	resetGrid();
 	let newSize = parseInt(gridSizeInput.value); 
+	if(newSize < 1)
+		return 0;
+
+	resetGrid();
 	addSquaresToGrid(newSize);
 	addGridSquareEventListeners();
 }

@@ -1,4 +1,4 @@
-function setSquareSizes() {
+function setSquareSizes(size) {
 	document.documentElement.style.setProperty("--gridSideSquares", size);
 	document.documentElement.style.setProperty("--squareSideLength", gridSideLength/size + "px");
 }
@@ -8,7 +8,7 @@ function addSquaresToGrid(size = 16) {
 	{
 		gridFrame.appendChild(square.cloneNode());
 	}
-	setSquareSizes();
+	setSquareSizes(size);
 }
 
 const gridFrame = document.querySelector("#container");

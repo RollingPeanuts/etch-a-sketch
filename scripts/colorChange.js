@@ -1,11 +1,15 @@
-function changeColor(e)
+function changeColor(e, penColor)
 {
 	e.target.style.backgroundColor = penColor;	
 }
 
-function addGridSquareEventListeners() {
-	let gridSquaresList = document.querySelectorAll(".square");
-	gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", changeColor));
+function addGridSquareEventListeners(penColor = "black") {
+	gridSquaresList = document.querySelectorAll(".square");
+	gridSquaresList.forEach(gridSquare =>
+		gridSquare.addEventListener("mouseleave", (e) => {
+			changeColor(e, penColor);
+		})
+	);
 }
 
 function resetAllSquares()
@@ -13,7 +17,7 @@ function resetAllSquares()
 	gridSquaresList.forEach(gridSquare => gridSquare.removeAttribute("style"));
 }
 
-let penColor = "black";
+let gridSquaresList;
 addGridSquareEventListeners();
 
 let resetButton = document.querySelector("#reset-button");
