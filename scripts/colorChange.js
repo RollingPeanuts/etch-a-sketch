@@ -33,7 +33,6 @@ function toggleOnRandomColors() {
 	gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", randomizePenColor));
 }
 
-
 let gridSquaresList;
 addGridSquareEventListeners();
 
