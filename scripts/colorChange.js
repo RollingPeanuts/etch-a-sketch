@@ -1,14 +1,12 @@
-function changeColor(e, penColor) {
-	e.target.style.backgroundColor = penColor;	
+function changeColor(e) {
+	//PROBLEM: Changing colors ignores reversible feature
+	e.target.style.backgroundColor = changeColor.color;	
 }
 
 function addGridSquareEventListeners(penColor = "black") {
 	gridSquaresList = document.querySelectorAll(".square");
-	gridSquaresList.forEach(gridSquare =>
-		gridSquare.addEventListener("mouseleave", (e) => {
-			changeColor(e, penColor);
-		})
-	);
+	changeColor.color = penColor;
+	gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", changeColor));
 }
 
 function resetAllSquares() {
