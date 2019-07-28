@@ -1,5 +1,13 @@
-function setReversiblePen() {
-	gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", 
+function resetPen() {
+	gridSquaresList.forEach(gridSquare => gridSquare.removeEventListener("mouseleave", changeColor));
+}
+
+function addColorToggle(e) {
+	if(e.target.style.backgroundColor)
+		e.target.style.backgroundColor = "";
+	else
+		e.target.style.backgroundColor = colorSelector.value;
+}
 
 function changePen(e) {
 	let penSelection = e.target.value;	
@@ -11,7 +19,8 @@ function changePen(e) {
 		case "brush":
 			break;
 		case "reversible":
-			setReversiblePen();
+			resetPen();
+			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", addColorToggle));
 			break;
 	}
 
