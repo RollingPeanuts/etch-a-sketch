@@ -1,5 +1,7 @@
 function resetPen() {
+	gridSquaresList.forEach(gridSquare => gridSquare.removeEventListener("mouseleave", randomizePenColor));
 	gridSquaresList.forEach(gridSquare => gridSquare.removeEventListener("mouseleave", changeColor));
+	
 }
 
 function addColorToggle(e) {
@@ -9,9 +11,10 @@ function addColorToggle(e) {
 		e.target.style.backgroundColor = colorSelector.value;
 }
 
-function changePen(e) {
-	let penSelection = e.target.value;	
-	switch(penSelection) {	
+function setPen(penSelection) {
+	let newPen = penSelection || document.querySelector("input[name=pen-option]:checked").value; 
+	resetPen();
+	switch(newPen) {	
 		case "normal":
 			let currentColor = colorSelector.value;
 			addGridSquareEventListeners(currentColor);
@@ -19,11 +22,14 @@ function changePen(e) {
 		case "brush":
 			break;
 		case "reversible":
-			resetPen();
 			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", addColorToggle));
 			break;
 	}
+}
 
+function changePen(e) {
+	let penSelection = e.target.value;	
+	setPen(penSelection);
 }
 
 let penOptions = document.querySelectorAll("#pen-selector input");

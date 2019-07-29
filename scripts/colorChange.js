@@ -14,9 +14,7 @@ function resetAllSquares() {
 }
 
 function updateColor(e) {
-	gridSquaresList.forEach(gridSquare => gridSquare.removeEventListener("mouseleave", randomizePenColor));
-	let penColor = e.target.value;
-	addGridSquareEventListeners(penColor);
+	setPen();
 }
 
 function randomizePenColor() {
