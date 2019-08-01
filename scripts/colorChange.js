@@ -1,27 +1,22 @@
 function changeColor(e) {
 	//PROBLEM: Changing colors ignores reversible feature
-	e.target.style.backgroundColor = changeColor.color;	
-}
-
-function addGridSquareEventListeners(penColor = "black") {
-	gridSquaresList = document.querySelectorAll(".square");
-	changeColor.color = penColor;
-	gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", changeColor));
+	e.target.style.backgroundColor = penColor;	
 }
 
 function resetAllSquares() {
 	gridSquaresList.forEach(gridSquare => gridSquare.removeAttribute("style"));
 }
 
-function updateColor(e) {
-	setPen();
+function updatePenColor(e) {
+	penColor = e.target.value;
+	updateGridSquareEventListeners();
 }
 
 function randomizePenColor() {
-	let color = "rgb(" + Math.floor(Math.random() * 256) + "," 
+	penColor = "rgb(" + Math.floor(Math.random() * 256) + "," 
 		+ Math.floor(Math.random() * 256) + "," 
 		+ Math.floor(Math.random() * 256) + ")";
-	addGridSquareEventListeners(color);
+	updateGridSquareEventListeners();
 }
 
 
@@ -30,13 +25,13 @@ function toggleOnRandomColors() {
 }
 
 let gridSquaresList;
-addGridSquareEventListeners();
+updateGridSquareEventListeners();
 
 let resetButton = document.querySelector("#reset-button");
 resetButton.addEventListener("click", resetAllSquares);
 
 let colorSelector = document.querySelector("#color-selector");
-colorSelector.addEventListener("change", updateColor);
+colorSelector.addEventListener("change", updatePenColor);
 
 let randomColorsButton = document.querySelector("#random-colors-option");
 randomColorsButton.addEventListener("click", toggleOnRandomColors);

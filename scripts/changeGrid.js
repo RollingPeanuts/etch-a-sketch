@@ -11,7 +11,7 @@ function changeGridSize() {
 
 	resetGrid();
 	addSquaresToGrid(newSize);
-	addGridSquareEventListeners();
+	updateGridSquareEventListeners();
 }
 
 const gridSizeInput = document.querySelector("#grid-size-form").firstElementChild;
