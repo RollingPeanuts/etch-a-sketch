@@ -4,13 +4,18 @@ function resetGrid() {
 	}
 }
 
+function updateGridSquareList() {
+	gridSquaresList = document.querySelectorAll(".square");
+}
+
 function changeGridSize() {
 	let newSize = parseInt(gridSizeInput.value); 
 	if(newSize < 1)
-		return 0;
+		return 0; //Catches invalid size lengths
 
 	resetGrid();
 	addSquaresToGrid(newSize);
+	updateGridSquareList();
 	updateGridSquareEventListeners();
 }
 

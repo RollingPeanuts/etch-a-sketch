@@ -1,25 +1,24 @@
-let penSelection = "normal"; //Default Pen Type
+let penType= "normal"; //Default Pen Type
 let penColor = "black"; //Default Pen Color
 
 function resetEventListeners() {
-	gridSquaresList.forEach(gridSquare => gridSquare.removeEventListener("mouseleave", randomizePenColor));
 	gridSquaresList.forEach(gridSquare => gridSquare.removeEventListener("mouseleave", changeColor));
 	gridSquaresList.forEach(gridSquare => gridSquare.removeEventListener("mouseleave", addColorToggle));
 }
 
-function updateGridSquareList() {
-	gridSquaresList = document.querySelectorAll(".square");
-}
-
-
 function updateGridSquareEventListeners() {
-	updateGridSquareList();
-	resetEventListeners();
-	switch(penSelection) {	
+	//updateGridSquareList();
+	/* TODO PROBLEM: resetEventListener() runs before changeColor eventListener
+	 *          so changeColor is deleted before it's able to run, messing 
+	 *          with randomizePenColor functionality */
+	resetEventListeners(); 
+	switch(penType) {	
 		case "normal":
 			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", changeColor));	
 			break;
 		case "brush":
+			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", changeColor));	
+			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", changeOpacity));
 			break;
 		case "reversible":
 			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", addColorToggle));
