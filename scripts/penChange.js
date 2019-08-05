@@ -2,13 +2,11 @@ function addColorToggle(e) {
 	if(e.target.style.backgroundColor) //TODO: Anyway to make this more pretty?
 	{
 		e.target.style.backgroundColor = "";
-		e.target.style.opacity = "";
 	}	
 	else
-		e.target.style.backgroundColor = penColor; //TODO: Allow user to set background color
+		changeColor(e);
 }
 
-//TODO: PROBLEM: When changing back normal pen after using brush, normal pen is unable to override brush and reversible keep opacity feature when flipping.
 function changeOpacity(e) {
 	if(!e.target.style.opacity)
 		e.target.style.opacity = 0.2;
@@ -24,7 +22,15 @@ function eraseStyle(e) {
 	e.target.style = "";
 }
 
+function resetOpacity(e) {
+	e.target.style.opacity = "";
+}
+
 function setPen(e) {
+	if(penType == "brush")
+		gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", resetOpacity));
+	else if(penType == "color-changing")
+		penColor = colorSelector.value;
 	penType = e.target.value;
 	updateGridSquareEventListeners();
 }
