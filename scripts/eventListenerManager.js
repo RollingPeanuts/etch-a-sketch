@@ -3,7 +3,9 @@ let penColor = "black"; //Default Pen Color
 
 function resetEventListeners() {
 	gridSquaresList.forEach(gridSquare => gridSquare.removeEventListener("mouseleave", changeColor));
+	gridSquaresList.forEach(gridSquare => gridSquare.removeEventListener("mouseleave", changeOpacity));
 	gridSquaresList.forEach(gridSquare => gridSquare.removeEventListener("mouseleave", addColorToggle));
+	gridSquaresList.forEach(gridSquare => gridSquare.removeEventListener("mouseleave", eraseStyle));
 }
 
 function updateGridSquareEventListeners() {
@@ -17,11 +19,13 @@ function updateGridSquareEventListeners() {
 			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", changeColor));	
 			break;
 		case "brush":
-			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", changeColor));	
 			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", changeOpacity));
 			break;
 		case "reversible":
 			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", addColorToggle));
+			break;
+		case "eraser":
+			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", eraseStyle));
 			break;
 	}	
 }

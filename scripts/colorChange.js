@@ -1,5 +1,6 @@
 function changeColor(e) {
 	e.target.style.backgroundColor = penColor;	
+	e.target.style.opacity = "";
 }
 
 function resetAllSquares() {
