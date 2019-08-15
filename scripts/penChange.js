@@ -8,12 +8,13 @@ function addColorToggle(e) {
 }
 
 function changeOpacity(e) {
+	brushOpacity = parseFloat(opacityValueForm.value);
 	if(!e.target.style.opacity)
-		e.target.style.opacity = 0.2;
+		e.target.style.opacity = brushOpacity;
 	else if(e.target.style.opacity >= 1)
 		e.target.style.opacity = 1;
 	else
-		e.target.style.opacity = parseFloat(e.target.style.opacity) + 0.2; //TODO: Allow user to set opacity change value
+		e.target.style.opacity = parseFloat(e.target.style.opacity) + brushOpacity; 
 
 	e.target.style.backgroundColor = penColor;
 }
@@ -35,5 +36,13 @@ function setPen(e) {
 	updateGridSquareEventListeners();
 }
 
-let penSelectorList= document.querySelectorAll("#pen-selector input");
-penSelectorList.forEach(penSelector => penSelector .addEventListener("click", setPen));
+function setOpacityGradient() {
+	updateGridSquareEventListeners();
+}
+
+
+let penSelectorList = document.querySelectorAll("#pen-selector input:not([type='number'])");
+penSelectorList.forEach(penSelector => penSelector.addEventListener("click", setPen));
+
+let opacityValueForm = document.querySelector("input[name='opacity-value']");
+opacityValueForm.addEventListener("change", setOpacityGradient);

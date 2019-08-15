@@ -1,3 +1,4 @@
+//TODO: Refactor to remove globals?
 let penType= "normal"; //Default Pen Type
 let penColor = "black"; //Default Pen Color
 

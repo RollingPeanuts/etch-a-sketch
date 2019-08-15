@@ -15,7 +15,7 @@ function setRandomColor(e) {
 	penColor = "rgba(" + Math.floor(Math.random() * 256) + "," 
 		+ Math.floor(Math.random() * 256) + "," 
 		+ Math.floor(Math.random() * 256) + ","
-		+ Math.random() + ")";
+		+ (Math.random() * 0.5 + 0.5)  + ")"; //0.5 - 1 Opacity Range
 	changeColor(e);
 }
 
