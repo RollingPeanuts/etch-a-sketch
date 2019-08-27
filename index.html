@@ -8,20 +8,51 @@
 	</head>
 	<body>
 		<div id="container">
-		</div>
-		<button id="reset-button">Reset</button>
-
-		<form id="grid-size-form" onsubmit="return false">
-			<input type="number" value="16" min="1">
-			<input type="submit" value="Create new grid">
-		</form>
-		<input id="color-selector" type="color">
-		<div id="pen-selector">
-			<input type="radio" name="pen-option" value="normal" checked>Normal<br>
-			<input type="radio" name="pen-option" value="brush">Brush<br>
-			<input type="radio" name="pen-option" value="reversible">Reversible<br>
-			<input type="radio" name="pen-option" value="color-changing">Color Changing<br>
-			<input type="radio" name="pen-option" value="eraser">Eraser<br>
+			<div id="sketch-heading">
+				<input type="text" value="Title of your masterpiece">	
+			</div>
+			<div id="grid-container">
+				<h1 id="side-title">Etch-a-Sketch</h1>
+				<div id="sketch-grid"></div>
+				<div id="show-menu" class="toggle-menu-button" style="display: none">
+					<svg focusable="false" viewBox="0 0 24 24">
+						<path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+					</svg>
+				</div>
+				<div id="settings">
+					<div id="settings-container">
+						<div id="settings-heading">	
+							<h3>Tools & Settings</h3>
+							<div id="hide-menu" class="toggle-menu-button">
+								<svg focusable="false" viewBox="0 0 24 24">
+									<path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+								</svg>
+							</div>
+						</div>
+						<button id="reset-button">Clear Grid</button>
+						<div id="color-menu">
+							<h4>Pen Color</h4>
+							<input id="color-selector" type="color">
+						</div>
+						<div id="pen-selector">
+							<h4>Pen Types</h4>
+							<!--TODO: Add help icon, and grey out color selector when random colors is selected -->
+							<input type="radio" name="pen-option" value="normal" checked>Normal<br>
+							<input type="radio" name="pen-option" value="brush">Brush
+							<input type="number" name="opacity-value" value="0.2" min="0" max="1" step="0.01" style="display: none"><br>
+							<input type="radio" name="pen-option" value="reversible">Reversible<br>
+							<input type="radio" name="pen-option" value="color-changing">Color Changing<br>
+							<input type="radio" name="pen-option" value="eraser">Eraser<br>
+						</div>
+						<form id="grid-size-form" onsubmit="return false">
+							<h4>Grid Setup</h4>
+							<input type="number" value="16" min="1">
+							<input type="submit" value="Create new grid">
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="footer">App created by Eric</div>
 		</div>
 	</body>
 	<script src="./scripts/gridGenerator.js" ></script>
@@ -29,5 +60,6 @@
 	<script src="./scripts/penChange.js" ></script>
 	<script src="./scripts/colorChange.js" ></script>
 	<script src="./scripts/changeGrid.js" ></script>
+	<script src="./scripts/menuToggles.js"></script>
 </html>
 

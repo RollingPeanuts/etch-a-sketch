@@ -19,6 +19,6 @@ function changeGridSize() {
 	updateGridSquareEventListeners();
 }
 
-const gridSizeInput = document.querySelector("#grid-size-form").firstElementChild;
-const newGridButton = document.querySelector("#grid-size-form").lastElementChild;
+const gridSizeInput = document.querySelector("#grid-size-form input[type='number']");
+const newGridButton = document.querySelector("#grid-size-form input[type='submit']");
 newGridButton.addEventListener("click", changeGridSize);

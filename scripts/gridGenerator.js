@@ -11,7 +11,7 @@ function addSquaresToGrid(size = 16) {
 	setSquareSizes(size);
 }
 
-const gridFrame = document.querySelector("#container");
+const gridFrame = document.querySelector("#sketch-grid");
 const square = document.createElement("div");
 square.classList.add("square");
 

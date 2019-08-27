@@ -4,13 +4,102 @@
 	--squareSideLength; 
 }
 
+#side-title {
+	writing-mode: vertical-lr;
+	transform: rotate(180deg);
+	width: 50px;
+	font-size: 50px;
+	font-style: italic;
+}
+
 #container {
+	width: 100%;
+	height: 100%;
+}
+
+#sketch-heading {
+	text-align: center;
+}
+
+#sketch-heading input{
+	text-align: center;
+}
+
+#grid-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+#sketch-grid {
 	display: grid;
 	grid-template-rows: repeat(var(--gridSideSquares), var(--squareSideLength));
 	grid-template-columns: repeat(var(--gridSideSquares), var(--squareSideLength));
+	margin-bottom: 30px;
 }
 
 .square {
 	border: 2px dotted black;
 }
 
+#settings {
+	display: flex;
+	width: 200px;
+	flex-wrap: wrap;
+	align-content: flex-start;
+}
+
+#settings-container {
+	width: 100%;
+	padding: 0 10px 0 10px;
+	border: 2px solid black;
+}
+
+#settings-container > *:not(#toggle-menu-button) {
+	width: 100%;
+	margin: 10px 0 10px 0;
+}
+
+h3 {
+	padding: 0;
+	margin: 0;
+}
+
+#settings-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.toggle-menu-button {
+	width: 24px;
+	height: 24px;
+	border: 1px grey solid;
+	border-radius: 50%;
+}
+
+svg {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+#hide-menu svg {
+	transform: rotate(180deg);
+}
+
+#reset-button {
+	height: 30px;
+}
+
+#color-selector {
+	width: 75%
+}
+
+#grid-size-form input[type="number"] {
+	width: 45px;
+}
+
+input[disabled] {
+	opacity: 0.5;
+}
