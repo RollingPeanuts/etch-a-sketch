@@ -4,17 +4,26 @@
 	--squareSideLength; 
 }
 
-#side-title {
-	writing-mode: vertical-lr;
-	transform: rotate(180deg);
-	width: 50px;
-	font-size: 50px;
-	font-style: italic;
+html, body{
+	height: 100%;
 }
 
 #container {
+	min-height: 100%;
+}
+
+#side-header {
+	display: flex;
+	width: 50px;
+}
+
+#side-title {
+	writing-mode: vertical-lr;
+	transform: rotate(180deg);
 	width: 100%;
-	height: 100%;
+	font-size: 50px;
+	font-style: italic;
+	margin: 0;
 }
 
 #sketch-heading {
@@ -35,7 +44,6 @@
 	display: grid;
 	grid-template-rows: repeat(var(--gridSideSquares), var(--squareSideLength));
 	grid-template-columns: repeat(var(--gridSideSquares), var(--squareSideLength));
-	margin-bottom: 30px;
 }
 
 .square {
@@ -92,6 +100,7 @@ svg {
 	height: 30px;
 }
 
+/* Needs to be centered */
 #color-selector {
 	width: 75%
 }
@@ -102,4 +111,9 @@ svg {
 
 input[disabled] {
 	opacity: 0.5;
+}
+
+#footer {
+	margin-right: 50px;
+	float: right;
 }
