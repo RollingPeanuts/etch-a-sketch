@@ -30,8 +30,22 @@ html, body{
 	text-align: center;
 }
 
-#sketch-heading input{
+#sketch-title input{
+	width: calc(var(--gridSideSquares)*var(--squareSideLength));
+	overflow: visible;
+	border: none;
 	text-align: center;
+	text-decoration: underline;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+#author-container {
+	padding-bottom: 10px;
+}
+
+#sketch-author {
+	width: calc(var(--gridSideSquares)*var(--squareSideLength));
 }
 
 #grid-container {
@@ -59,7 +73,7 @@ html, body{
 
 #settings-container {
 	width: 100%;
-	padding: 0 10px 0 10px;
+	padding: 0 10px 5px 10px;
 	border: 2px solid black;
 }
 
@@ -68,7 +82,7 @@ html, body{
 	margin: 10px 0 10px 0;
 }
 
-h3 {
+h3, h4 {
 	padding: 0;
 	margin: 0;
 }
@@ -77,6 +91,8 @@ h3 {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	padding-bottom: 10px;
+	border-bottom: 2px dashed black;
 }
 
 .toggle-menu-button {
@@ -100,13 +116,25 @@ svg {
 	height: 30px;
 }
 
-/* Needs to be centered */
+#color-menu, #pen-selector {
+	padding-bottom: 10px;
+}
+
 #color-selector {
-	width: 75%
+	width: 70%;
+	margin: 0 15% 0 15%;
+}
+
+#grid-size-form > * {
+	margin-bottom: 5px;
 }
 
 #grid-size-form input[type="number"] {
 	width: 45px;
+}
+
+#grid-size-form input[type="submit"] {
+	width: 100%;
 }
 
 input[disabled] {

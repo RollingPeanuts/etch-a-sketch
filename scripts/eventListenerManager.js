@@ -1,5 +1,5 @@
 //TODO: Refactor to remove globals?
-let penType= "normal"; //Default Pen Type
+let penType= "pen"; //Default Pen Type
 let penColor = "black"; //Default Pen Color
 
 function resetEventListeners() {
@@ -13,7 +13,7 @@ function resetEventListeners() {
 function updateGridSquareEventListeners() {
 	resetEventListeners(); 
 	switch(penType) {	
-		case "normal":
+		case "pen":
 			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", changeColor));	
 			break;
 		case "brush":
@@ -24,7 +24,7 @@ function updateGridSquareEventListeners() {
 			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", addColorToggle));
 			break;
 		case "color-changing":
-			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", setRandomColor)); //TODO: After leaving this selection, last random color persists
+			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", setRandomColor));
 			break;
 		case "eraser":
 			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", eraseStyle));
