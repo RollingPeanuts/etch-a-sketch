@@ -11,18 +11,16 @@
 		<div id="container">
 			<div id="sketch-heading">
 				<div id="sketch-title">
-					<input type="text" value="Insert the title of your masterpiece here" style="margin-right: 150px">	
+					<input type="text" value="Insert the title of your masterpiece" style="margin-right: 150px">	
 				</div>
-				<div id="author-container">
-					<div id="sketch-author">
-						<span>By: </span>
-						<input type="text" value="Your Name">
-					</div>
+				<div id="sketch-author">
+					<span>By: </span>
+					<input type="text" value="Your Name" style="margin-right: 150px">
 				</div>
 			</div>
 			<div id="grid-container">
 				<div id="side-header">
-					<h1 id="side-title">Etch-a-Sketch</h1>
+					<h1 id="logo">Etch-a-Sketch</h1>
 				</div>
 				<div id="sketch-grid"></div>
 				<div id="show-menu" class="toggle-menu-button" style="display: none">
@@ -48,21 +46,32 @@
 						<div id="pen-selector">
 							<h4>Pen Types</h4>
 							<!--TODO: Add help icon, and grey out color selector when random colors is selected -->
-							<input type="radio" name="pen-option" value="pen" checked> Pen<br>
+							<input type="radio" name="pen-option" value="pen" checked> Pen
+							<br>
 							<input type="radio" name="pen-option" value="brush"> Brush
-							<input type="number" name="opacity-value" value="0.2" min="0" max="1" step="0.01" style="display: none"><br>
-							<input type="radio" name="pen-option" value="reversible"> Reversible<br>
-							<input type="radio" name="pen-option" value="color-changing"> Color Changing<br>
-							<input type="radio" name="pen-option" value="eraser"> Eraser<br>
+							<br>
+							<div id="opacity-form" style="display: none">
+								<ul>
+									<li>Opacity:  <input type="number" name="opacity-value" value="0.2" min="0" max="1" step="0.01"></li>
+								</ul>
+							</div>
+							<input type="radio" name="pen-option" value="reversible"> Reversible
+							<br>
+							<input type="radio" name="pen-option" value="color-changing"> Color Changing
+							<br>
+							<input type="radio" name="pen-option" value="eraser"> Eraser
+							<br>
 						</div>
 						<form id="grid-size-form" onsubmit="return false">
 							<h4>Grid Setup</h4>
 							<span>Squares/Side: </span>
 							<input type="number" value="16" min="1">
+							<br>
 							<!-- Add functionality for changing length -->
-							<span>Length of grid</span>
+							<span>Length of grid:</span>
 							<input type="number" value="900" min="1">
 							<span>px</span>
+							<br>
 							<input type="submit" value="Create new grid">
 						</form>
 					</div>

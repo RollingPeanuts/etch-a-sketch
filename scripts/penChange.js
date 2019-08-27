@@ -1,5 +1,5 @@
 function addColorToggle(e) {
-	if(e.target.style.backgroundColor) //TODO: Anyway to make this more pretty?
+	if(e.target.style.backgroundColor)
 	{
 		e.target.style.backgroundColor = "";
 	}	

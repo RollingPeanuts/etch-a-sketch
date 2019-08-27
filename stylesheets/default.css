@@ -17,7 +17,7 @@ html, body{
 	width: 50px;
 }
 
-#side-title {
+#logo {
 	writing-mode: vertical-lr;
 	transform: rotate(180deg);
 	width: 100%;
@@ -36,16 +36,18 @@ html, body{
 	border: none;
 	text-align: center;
 	text-decoration: underline;
-	font-size: 50px;
+	font-size: 45px;
 	font-weight: bold;
 }
 
-#author-container {
+#sketch-author {
+	width: 100%; 
 	padding-bottom: 10px;
 }
 
-#sketch-author {
-	width: calc(var(--gridSideSquares)*var(--squareSideLength));
+#sketch-author input {
+	width: calc(var(--gridSideSquares)*var(--squareSideLength)/3);
+	text-align: center;
 }
 
 #grid-container {
@@ -125,8 +127,21 @@ svg {
 	margin: 0 15% 0 15%;
 }
 
+ul {
+	margin: 0;
+	padding-left: 30px;
+}
+
+#opacity-form input {
+	width: 50px;
+}
+
 #grid-size-form > * {
 	margin-bottom: 5px;
+}
+
+#grid-size-form h4 {
+	margin-bottom: 0;
 }
 
 #grid-size-form input[type="number"] {

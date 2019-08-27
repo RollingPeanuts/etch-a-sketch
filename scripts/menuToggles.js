@@ -1,9 +1,9 @@
 function toggleOpacityForm(e) {
 	let currentPen = e.target.value;
 	if(currentPen == "brush")
-		opacityValueForm.style.display = "";
+		opacityFormContainer.style.display = "";
 	else
-		opacityValueForm.style.display = "none";
+		opacityFormContainer.style.display = "none";
 
 	if(currentPen == "color-changing" || currentPen == "eraser")
 		colorSelector.disabled = true;	
@@ -12,10 +12,14 @@ function toggleOpacityForm(e) {
 }
 
 function updateTitlePosition(isMenuShowing) {
-	if(isMenuShowing)
+	if(isMenuShowing) {
 		sketchTitle.style.marginRight = "150px";
-	else
+		sketchAuthor.style.marginRight = "150px";
+	}
+	else {
 		sketchTitle.style.marginRight = "-24px";
+		sketchAuthor.style.marginRight = "-24px";
+	}
 }
 
 
@@ -34,6 +38,7 @@ function toggleMenu(e) {
 	updateTitlePosition(isMenuShowing);
 }
 
+let opacityFormContainer = document.querySelector("#opacity-form");
 penSelectorList.forEach(penSelector => penSelector.addEventListener("click", toggleOpacityForm));
 
 let settingsMenu = document.querySelector("#settings");
@@ -42,3 +47,4 @@ let openMenuButton = document.querySelector("#show-menu");
 menuToggleList.forEach(toggleButton => toggleButton.addEventListener("click", toggleMenu));
 
 let sketchTitle = document.querySelector("#sketch-heading input");
+let sketchAuthor = document.querySelector("#sketch-author input");
