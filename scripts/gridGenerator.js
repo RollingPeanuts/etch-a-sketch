@@ -17,6 +17,6 @@ square.classList.add("square");
 
 /* Retrieves size of grid as specified in default.css */
 const htmlStyles = window.getComputedStyle(document.querySelector("html"));
-const gridSideLength = parseInt(htmlStyles.getPropertyValue("--gridSideLength").slice(0, -2));
+let gridSideLength = parseInt(htmlStyles.getPropertyValue("--gridSideLength").slice(0, -2));
 
 addSquaresToGrid();

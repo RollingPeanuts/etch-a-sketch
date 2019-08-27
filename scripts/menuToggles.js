@@ -38,13 +38,13 @@ function toggleMenu(e) {
 	updateTitlePosition(isMenuShowing);
 }
 
-let opacityFormContainer = document.querySelector("#opacity-form");
+const opacityFormContainer = document.querySelector("#opacity-form");
 penSelectorList.forEach(penSelector => penSelector.addEventListener("click", toggleOpacityForm));
 
-let settingsMenu = document.querySelector("#settings");
-let menuToggleList = document.querySelectorAll(".toggle-menu-button");
-let openMenuButton = document.querySelector("#show-menu");
+const settingsMenu = document.querySelector("#settings");
+const menuToggleList = document.querySelectorAll(".toggle-menu-button");
+const openMenuButton = document.querySelector("#show-menu");
 menuToggleList.forEach(toggleButton => toggleButton.addEventListener("click", toggleMenu));
 
-let sketchTitle = document.querySelector("#sketch-heading input");
-let sketchAuthor = document.querySelector("#sketch-author input");
+const sketchTitle = document.querySelector("#sketch-heading input");
+const sketchAuthor = document.querySelector("#sketch-author input");

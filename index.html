@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- TODO: ADD TOOLTIPS, Adjust sketch title, clean up settings, and make color selector centered -->
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -15,7 +14,7 @@
 				</div>
 				<div id="sketch-author">
 					<span>By: </span>
-					<input type="text" value="Your Name" style="margin-right: 150px">
+					<input type="text" value="Your Artist Name" style="margin-right: 150px">
 				</div>
 			</div>
 			<div id="grid-container">
@@ -45,6 +44,26 @@
 						</div>
 						<div id="pen-selector">
 							<h4>Pen Types</h4>
+							<div id="help-icon" class="tooltip">
+								<svg focusable="false" viewBox="0 0 24 24">
+									<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"></path>
+								</svg>
+								<span class="tooltiptext">
+									<u><strong>Brush</strong></u>
+									<br>
+									Overlaping layers on squares creates darker hues
+									<br>
+									<br>
+									<u><strong>Reversible</strong></u>
+									<br>
+									Blank squares get colored and colored squares get blanked 
+									<br>
+									<br>
+									<u><strong>Color Changing</strong></u>
+									Every square gets a random color
+								</span>
+							</div>
+							<br>
 							<!--TODO: Add help icon, and grey out color selector when random colors is selected -->
 							<input type="radio" name="pen-option" value="pen" checked> Pen
 							<br>
@@ -65,11 +84,10 @@
 						<form id="grid-size-form" onsubmit="return false">
 							<h4>Grid Setup</h4>
 							<span>Squares/Side: </span>
-							<input type="number" value="16" min="1">
+							<input type="number" name="square-number" value="16" min="1">
 							<br>
-							<!-- Add functionality for changing length -->
 							<span>Length of grid:</span>
-							<input type="number" value="900" min="1">
+							<input type="number" name="side-length" value="900" min="1">
 							<span>px</span>
 							<br>
 							<input type="submit" value="Create new grid">

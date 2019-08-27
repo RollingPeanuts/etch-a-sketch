@@ -1,4 +1,3 @@
-//TODO: Refactor to remove globals?
 let penType= "pen"; //Default Pen Type
 let penColor = "black"; //Default Pen Color
 
@@ -18,7 +17,7 @@ function updateGridSquareEventListeners() {
 			break;
 		case "brush":
 			gridSquaresList.forEach(gridSquare => gridSquare.removeEventListener("mouseleave", resetOpacity));
-			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", changeOpacity)); //TODO: Maybe roll this back to include changeColor event listener for more clarity/readability?
+			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", changeOpacity));
 			break;
 		case "reversible":
 			gridSquaresList.forEach(gridSquare => gridSquare.addEventListener("mouseleave", addColorToggle));
