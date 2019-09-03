@@ -5,20 +5,20 @@
 		<title>Etch-a-Sketch</title>
 		<link rel="stylesheet" href="./stylesheets/normalize.css" type="text/css">
 		<link rel="stylesheet" href="./stylesheets/default.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Lobster+Two|Pacifico&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div id="container">
 			<div id="sketch-heading">
 				<div id="sketch-title">
-					<input type="text" value="Insert the title of your masterpiece" style="margin-right: 150px">	
+					<input type="text" value="Insert title" style="margin-right: 150px">	
 				</div>
 				<div id="sketch-author">
-					<span>By: </span>
 					<input type="text" value="Your Artist Name" style="margin-right: 150px">
 				</div>
 			</div>
 			<div id="grid-container">
-				<div id="side-header">
+				<div id="side-header" class="device-side">
 					<h1 id="logo">Etch-a-Sketch</h1>
 				</div>
 				<div id="sketch-grid"></div>
@@ -27,7 +27,7 @@
 						<path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
 					</svg>
 				</div>
-				<div id="settings">
+				<div id="settings" class="device-side">
 					<div id="settings-container">
 						<div id="settings-heading">	
 							<h3>Tools & Settings</h3>
